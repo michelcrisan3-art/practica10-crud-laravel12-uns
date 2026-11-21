@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNS - Módulo CRUD Laravel 12</title>
+    <title>UNS - Módulos CRUD Laravel 12</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .bg-uns { background-color: #8B0000 !important; }
@@ -13,12 +13,19 @@
     </style>
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-dark bg-uns shadow-sm mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-uns shadow-sm mb-4">
         <div class="container">
             <a class="navbar-brand fw-bold" href="{{ route('estudiantes.index') }}">
                 UNIVERSIDAD NACIONAL DEL SANTA &bull; EPISI
             </a>
-            <span class="navbar-text text-white">Aplicaciones Distribuidas I</span>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link {{ request()->routeIs('estudiantes.*') ? 'active fw-bold' : '' }}"
+                   href="{{ route('estudiantes.index') }}">Estudiantes</a>
+                <a class="nav-link {{ request()->routeIs('cursos.*') ? 'active fw-bold' : '' }}"
+                   href="{{ route('cursos.index') }}">Cursos</a>
+                <a class="nav-link {{ request()->routeIs('docentes.*') ? 'active fw-bold' : '' }}"
+                   href="{{ route('docentes.index') }}">Docentes</a>
+            </div>
         </div>
     </nav>
 

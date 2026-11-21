@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\DocenteController;
 
-// Redirección de la raíz hacia el módulo de estudiantes
 Route::redirect('/', '/estudiantes');
 
-// Registra automáticamente las 7 rutas RESTful de recurso
 Route::resource('estudiantes', EstudianteController::class);
+Route::resource('cursos', CursoController::class);
+Route::resource('docentes', DocenteController::class);
